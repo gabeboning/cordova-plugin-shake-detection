@@ -8,10 +8,7 @@ module.exports = (function () {
         shakeCallBack = null;
 
     // Start watching the accelerometer for a shake gesture
-    shake.startWatch = function (onShake) {
-        if (onShake) {
-            shakeCallBack = onShake;
-        }
+    shake.startWatch = function () {
         watchId = navigator.accelerometer.watchAcceleration(getAccelerationSnapshot, handleError, options);
     };
 
