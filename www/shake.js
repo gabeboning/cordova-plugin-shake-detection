@@ -38,9 +38,9 @@ module.exports = (function () {
         }
         if (accelerationChange.x + accelerationChange.y + accelerationChange.z > 30) {
             // Shake detected
-            if (typeof shakeCallBack === "function") {
-                shakeCallBack();
-            }
+            var event = new Event('shake');
+            document.dispatchEvent(event);
+
             shake.stopWatch();
             setTimeout(shake.startWatch, 1000);
             previousAcceleration = {
