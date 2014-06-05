@@ -35,8 +35,7 @@ module.exports = (function () {
         }
         if (accelerationChange.x + accelerationChange.y + accelerationChange.z > 30) {
             // Shake detected
-            var event = new Event('shake');
-            document.dispatchEvent(event);
+            $(document).trigger('shake');
 
             shake.stopWatch();
             setTimeout(shake.startWatch, 1000);
